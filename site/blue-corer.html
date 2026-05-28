@@ -1,0 +1,1190 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Corner | ワインバー 金沢</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Zen+Kurenaido&family=Noto+Sans+JP:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --blue: #4a7a9b;
+        --blue-dark: #3d5a75;
+        --blue-deeper: #3d5a75;
+        --blue-light: #7aadc8;
+        --blue-pale: #d0e4ef;
+        --blue-bg: #e8f2f8;
+        --cream: #f5f0e4;
+        --cream-dark: #ede5d0;
+        --text-dark: #1e2d38;
+        --text-mid: #4a5a68;
+        --text-light: #f5f2ec;
+        --text-muted: #8a9aa8;
+        --gold: #c8a96e;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Zen Kurenaido", "Noto Sans JP", sans-serif;
+        font-weight: 300;
+        background: var(--cream);
+        color: var(--text-dark);
+        line-height: 1.7;
+      }
+
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 48px;
+        background: rgba(61, 90, 117, 0.95);
+        backdrop-filter: blur(12px);
+      }
+      .nav-logo {
+        font-family: "Caveat", cursive;
+        font-size: 22px;
+        font-weight: 600;
+        color: #f5f2ec;
+        letter-spacing: 0.08em;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .nav-cat {
+        width: 28px;
+        height: 28px;
+        opacity: 0.9;
+      }
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        color: rgba(245, 242, 236, 0.6);
+        text-decoration: none;
+        transition: color 0.3s;
+        text-transform: uppercase;
+      }
+      .nav-links a:hover {
+        color: #f5f2ec;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        background: var(--blue-deeper);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 120px 48px 80px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-frame {
+        position: relative;
+        padding: 56px 72px;
+        max-width: 620px;
+        width: 100%;
+        background: transparent;
+      }
+      .hero-cat-wrap {
+        margin-bottom: 24px;
+      }
+      .hero-cat {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        opacity: 0.92;
+      }
+      .hero h1 {
+        font-family: "Caveat", cursive;
+        font-size: clamp(44px, 7vw, 72px);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: #f5f2ec;
+        line-height: 1.1;
+        margin-bottom: 16px;
+      }
+      .hero-tagline {
+        font-size: 17px;
+        letter-spacing: 0.2em;
+        color: rgba(245, 242, 236, 0.75);
+        margin-bottom: 8px;
+      }
+      .hero-sub {
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 32px;
+      }
+      .hero-desc {
+        font-size: 14px;
+        color: rgba(245, 242, 236, 0.6);
+        line-height: 2;
+      }
+      .hero-info {
+        display: flex;
+        gap: 40px;
+        margin-top: 48px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .hero-info-item {
+        text-align: center;
+      }
+      .hero-info-label {
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        color: rgba(245, 242, 236, 0.4);
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      .hero-info-value {
+        font-family: "Caveat", cursive;
+        font-size: 17px;
+        color: var(--gold);
+      }
+      .hero-cta {
+        display: inline-block;
+        margin-top: 36px;
+        border: 0.5px solid rgba(200, 169, 110, 0.6);
+        color: var(--gold);
+        padding: 12px 36px;
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: background 0.3s;
+      }
+      .hero-cta:hover {
+        background: rgba(200, 169, 110, 0.15);
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 96px max(48px, calc((100% - 960px) / 2));
+      }
+      .section-label {
+        font-family: "Caveat", cursive;
+        font-size: 34px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 48px;
+      }
+      .section-title {
+        font-family: "Caveat", cursive;
+        font-size: 34px;
+        font-weight: 600;
+        margin-bottom: 48px;
+        color: var(--text-dark);
+      }
+
+      /* WINE */
+      .wine {
+        background: var(--blue-deeper);
+      }
+      .wine .section-label {
+        color: var(--blue-light);
+      }
+      .wine .section-title {
+        color: #f5f2ec;
+      }
+      .wine-lead {
+        font-size: 15px;
+        color: rgba(245, 242, 236, 0.65);
+        line-height: 2;
+        max-width: 600px;
+        margin-bottom: 48px;
+      }
+      .wine-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(245, 242, 236, 0.08);
+        border: 0.5px solid rgba(245, 242, 236, 0.08);
+        max-width: 840px;
+        margin: 0 auto;
+      }
+      .wine-card {
+        padding: 32px 28px;
+        background: rgba(30, 63, 85, 0.6);
+      }
+      .wine-card-label {
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .wine-card h3 {
+        font-family: "Caveat", cursive;
+        font-size: 22px;
+        font-weight: 600;
+        color: #f5f2ec;
+        margin-bottom: 10px;
+      }
+      .wine-card p {
+        font-size: 13px;
+        color: rgba(245, 242, 236, 0.5);
+        line-height: 1.9;
+      }
+
+      /* MENU */
+      .menu-sec {
+        background: var(--cream);
+      }
+      .menu-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        max-width: 840px;
+        margin: 0 auto;
+      }
+      .menu-group h3 {
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--blue);
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 0.5px solid rgba(74, 122, 155, 0.25);
+      }
+      .menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 10px 0;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
+        gap: 16px;
+      }
+      .menu-item:last-child {
+        border-bottom: none;
+      }
+      .menu-item-name {
+        font-size: 14px;
+        color: var(--text-dark);
+      }
+      .menu-item-note {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-top: 2px;
+      }
+      .menu-item-price {
+        font-family: "Caveat", cursive;
+        font-size: 15px;
+        color: var(--blue);
+        white-space: nowrap;
+      }
+      .menu-note {
+        margin-top: 32px;
+        padding: 20px 24px;
+        background: var(--blue-bg);
+        border-left: 2px solid var(--blue-light);
+        font-size: 13px;
+        color: var(--text-mid);
+        line-height: 1.9;
+      }
+
+      /* MUSIC */
+      .music {
+        background: var(--blue);
+      }
+      .music .section-label {
+        color: var(--blue-pale);
+      }
+      .music .section-title {
+        color: #f5f2ec;
+      }
+      .music-body p {
+        font-size: 15px;
+        color: rgba(245, 242, 236, 0.7);
+        line-height: 2.1;
+        margin-bottom: 24px;
+        max-width: 640px;
+      }
+      .music-tag {
+        display: inline-block;
+        border: 0.5px solid rgba(245, 242, 236, 0.3);
+        color: rgba(245, 242, 236, 0.6);
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        padding: 4px 16px;
+        border-radius: 20px;
+        margin: 4px 4px 4px 0;
+      }
+
+      /* GALLERY */
+      .bar-sec {
+        background: var(--cream-dark);
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+      }
+      .gallery-item {
+        aspect-ratio: 1;
+        overflow: hidden;
+        position: relative;
+        background: var(--blue-pale);
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.05);
+      }
+
+      /* FOOD */
+      .food-sec {
+        background: var(--cream);
+      }
+      .food-lead {
+        font-size: 15px;
+        color: var(--text-mid);
+        line-height: 2;
+        max-width: 600px;
+        margin-bottom: 48px;
+      }
+      .food-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+      }
+      .food-item {
+        aspect-ratio: 1;
+        overflow: hidden;
+        background: var(--cream-dark);
+      }
+      .food-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+      .food-item:hover img {
+        transform: scale(1.05);
+      }
+
+      /* ACCESS */
+      .access {
+        background: var(--blue-deeper);
+      }
+      .access .section-label {
+        color: var(--blue-light);
+      }
+      .access .section-title {
+        color: #f5f2ec;
+      }
+      .access-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .info-block {
+        margin-bottom: 32px;
+      }
+      .info-block h3 {
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--blue-light);
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+      }
+      .info-row {
+        display: flex;
+        gap: 16px;
+        padding: 10px 0;
+        font-size: 14px;
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+      }
+      .info-row:last-child {
+        border-bottom: none;
+      }
+      .info-label {
+        color: var(--text-muted);
+        min-width: 80px;
+        font-size: 13px;
+      }
+      .info-value {
+        color: #f5f2ec;
+      }
+      .info-note {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-top: 3px;
+      }
+      .map-wrap {
+        border-radius: 2px;
+        overflow: hidden;
+        border: 0.5px solid rgba(74, 122, 155, 0.2);
+      }
+      .map-wrap iframe {
+        display: block;
+        width: 100%;
+        height: 300px;
+        border: 0;
+      }
+
+      /* CONTACT */
+      .contact {
+        background: var(--cream);
+      }
+      .contact-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .contact-desc {
+        font-size: 15px;
+        color: var(--text-mid);
+        line-height: 2;
+        margin-bottom: 24px;
+      }
+      .contact-info-item {
+        display: flex;
+        gap: 12px;
+        padding: 12px 0;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
+        font-size: 14px;
+      }
+      .contact-info-item:last-child {
+        border-bottom: none;
+      }
+      .contact-info-label {
+        color: var(--text-muted);
+        min-width: 72px;
+        font-size: 13px;
+      }
+      .contact-info-value {
+        color: var(--text-dark);
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .form-group label {
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+        text-transform: uppercase;
+      }
+      .form-group input,
+      .form-group textarea {
+        background: #fff;
+        border: 0.5px solid rgba(74, 122, 155, 0.3);
+        border-radius: 2px;
+        padding: 12px 16px;
+        font-size: 14px;
+        font-family: "Zen Kurenaido", sans-serif;
+        color: var(--text-dark);
+        outline: none;
+        transition: border-color 0.3s;
+      }
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: var(--blue);
+      }
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+      .form-submit {
+        display: inline-block;
+        background: var(--blue-deeper);
+        color: #f5f2ec;
+        border: none;
+        padding: 14px 40px;
+        font-size: 13px;
+        font-family: "Zen Kurenaido", sans-serif;
+        letter-spacing: 0.12em;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: opacity 0.3s;
+        align-self: flex-start;
+      }
+      .form-submit:hover {
+        opacity: 0.8;
+      }
+      .form-note {
+        font-size: 12px;
+        color: var(--text-muted);
+        line-height: 1.8;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--blue-deeper);
+        text-align: center;
+        padding: 60px 48px 40px;
+      }
+      .footer-cat {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 16px;
+        opacity: 0.7;
+      }
+      .footer-logo {
+        font-family: "Caveat", cursive;
+        font-size: 26px;
+        font-weight: 600;
+        color: #f5f2ec;
+        letter-spacing: 0.1em;
+        margin-bottom: 8px;
+      }
+      .footer-tagline {
+        font-size: 13px;
+        color: rgba(245, 242, 236, 0.45);
+        letter-spacing: 0.18em;
+        margin-bottom: 24px;
+      }
+      .footer-sub {
+        font-size: 12px;
+        color: rgba(245, 242, 236, 0.35);
+        line-height: 2;
+      }
+      .footer-sns {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin: 24px 0;
+      }
+      .footer-sns a {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: rgba(245, 242, 236, 0.45);
+        text-decoration: none;
+        text-transform: uppercase;
+        border: 0.5px solid rgba(245, 242, 236, 0.15);
+        padding: 6px 20px;
+        border-radius: 20px;
+        transition: all 0.3s;
+      }
+      .footer-sns a:hover {
+        color: #f5f2ec;
+        border-color: rgba(245, 242, 236, 0.4);
+      }
+      .footer-copy {
+        font-size: 11px;
+        color: rgba(245, 242, 236, 0.2);
+        margin-top: 32px;
+      }
+
+      /* HAMBURGER */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 36px;
+        height: 36px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        z-index: 200;
+      }
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #f5f2ec;
+        border-radius: 2px;
+        transition:
+          transform 0.3s,
+          opacity 0.3s;
+        transform-origin: center;
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+      .nav-mobile-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(20, 42, 58, 0.97);
+        z-index: 150;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+      }
+      .nav-mobile-overlay.open {
+        display: flex;
+      }
+      .nav-mobile-overlay a {
+        font-size: 22px;
+        letter-spacing: 0.18em;
+        color: rgba(245, 242, 236, 0.8);
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        nav {
+          padding: 14px 20px;
+        }
+        .nav-links {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .hero {
+          padding: 100px 20px 60px;
+        }
+        .hero-frame {
+          padding: 36px 28px;
+        }
+        .hero-info {
+          gap: 20px;
+        }
+        section {
+          padding: 64px 24px;
+        }
+        .wine-grid,
+        .menu-cols,
+        .contact-inner {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .gallery-grid,
+        .food-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .access-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-logo">
+        <img src="img/cat_icon.png" class="nav-cat" alt="猫アイコン" />
+        Blue Corner
+      </div>
+      <ul class="nav-links">
+        <li><a href="#wine">Wine</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#food">Food</a></li>
+        <li><a href="#music">Music</a></li>
+        <li><a href="#bar">Bar</a></li>
+        <li><a href="#access">Access</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="nav-mobile-overlay" id="mobileMenu">
+      <a href="#wine" class="mobile-link">Wine</a>
+      <a href="#menu" class="mobile-link">Menu</a>
+      <a href="#food" class="mobile-link">Food</a>
+      <a href="#music" class="mobile-link">Music</a>
+      <a href="#bar" class="mobile-link">Bar</a>
+      <a href="#access" class="mobile-link">Access</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-frame">
+        <div class="hero-cat-wrap">
+          <img src="img/cat_icon.png" class="hero-cat" alt="猫アイコン" />
+        </div>
+        <h1>Blue Corner</h1>
+        <div class="hero-tagline">ワインとおしのぎ</div>
+        <div class="hero-sub">ワインバー　ブルーコーナー</div>
+        <p class="hero-desc">
+          その日の気分に合ったお酒と手作りのおしのぎやおつまみを味わいながら、心地よい音楽を静かに楽しむ。そしてここでしか出会う事のなかった人々と語り会う。<br /><br />
+          金沢市北安江交差点からほど近いワインバー Blue Corner
+          を覗いてみませんか？
+        </p>
+      </div>
+      <div class="hero-info">
+        <div class="hero-info-item">
+          <div class="hero-info-label">Open</div>
+          <div class="hero-info-value">17:00〜23:00</div>
+        </div>
+        <div class="hero-info-item">
+          <div class="hero-info-label">Close</div>
+          <div class="hero-info-value">日曜定休</div>
+        </div>
+        <div class="hero-info-item">
+          <div class="hero-info-label">Charge</div>
+          <div class="hero-info-value">¥500</div>
+        </div>
+        <div class="hero-info-item">
+          <div class="hero-info-label">Seats</div>
+          <div class="hero-info-value">約8名</div>
+        </div>
+      </div>
+      <a href="#access" class="hero-cta">ご来店のご案内</a>
+    </section>
+
+    <!-- WINE -->
+    <section class="wine" id="wine">
+      <div class="section-label">Wine</div>
+      <div class="section-title"></div>
+      <p class="wine-lead">
+        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      </p>
+      <div class="wine-grid">
+        <div class="wine-card">
+          <div class="wine-card-label">Italy</div>
+          <h3>ワイン</h3>
+          <p>
+            バローロ、ブルネッロなど、イタリア各地の個性豊かなワインを揃えています。
+          </p>
+        </div>
+        <div class="wine-card">
+          <div class="wine-card-label">Italy</div>
+          <h3>ワイン</h3>
+          <p>
+            バローロ、ブルネッロなど、イタリア各地の個性豊かなワインを揃えています。
+          </p>
+        </div>
+        <div class="wine-card">
+          <div class="wine-card-label">Italy</div>
+          <h3>ワイン</h3>
+          <p>
+            バローロ、ブルネッロなど、イタリア各地の個性豊かなワインを揃えています。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu-sec" id="menu">
+      <div class="section-label">Menu</div>
+      <div class="section-title"></div>
+      <div class="menu-cols">
+        <div class="menu-group">
+          <h3>Drinks</h3>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">ウイスキー</div>
+              <div class="menu-item-note">スコッチ中心の厳選ラインナップ</div>
+            </div>
+            <div class="menu-item-price">¥800〜</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">ワイン（グラス）</div>
+              <div class="menu-item-note">イタリアワイン中心</div>
+            </div>
+            <div class="menu-item-price">¥700〜</div>
+          </div>
+          <div class="menu-item">
+            <div><div class="menu-item-name">日本酒</div></div>
+            <div class="menu-item-price">¥600〜</div>
+          </div>
+          <div class="menu-item">
+            <div><div class="menu-item-name">コーヒー・紅茶</div></div>
+            <div class="menu-item-price">¥500〜</div>
+          </div>
+          <div class="menu-item">
+            <div><div class="menu-item-name">チャージ</div></div>
+            <div class="menu-item-price">¥500</div>
+          </div>
+        </div>
+        <div class="menu-group">
+          <h3>Food</h3>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">本日のキッシュ</div>
+              <div class="menu-item-note">日替わり</div>
+            </div>
+            <div class="menu-item-price">¥800〜</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">パスタ</div>
+              <div class="menu-item-note">日替わり</div>
+            </div>
+            <div class="menu-item-price">¥900〜</div>
+          </div>
+          <div class="menu-item">
+            <div><div class="menu-item-name">ピザ</div></div>
+            <div class="menu-item-price">¥900〜</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">肉料理</div>
+              <div class="menu-item-note">ステーキ・煮込みなど</div>
+            </div>
+            <div class="menu-item-price">¥1,200〜</div>
+          </div>
+          <div class="menu-item">
+            <div><div class="menu-item-name">本日の小皿</div></div>
+            <div class="menu-item-price">¥500〜</div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-note">
+        ※ メニューは仕入れにより変更になる場合があります。最新情報は<a
+          href="https://www.facebook.com/profile.php?id=100042247496250"
+          target="_blank"
+          style="color: var(--blue)"
+          >Facebook</a
+        >をご確認ください。
+      </div>
+    </section>
+
+    <!-- FOOD -->
+    <section class="food-sec" id="food">
+      <div class="section-label">Food</div>
+      <div class="section-title"></div>
+      <p class="food-lead">
+        旬の食材を使った手作りの一皿をご用意しています。<br />
+        パスタ、生ハム、スープ、デザートなど、ワインや日本酒に寄り添うおしのぎをどうぞ。
+      </p>
+      <div class="food-grid">
+        <!-- 実際の写真ファイル名に合わせて変更してください -->
+        <div class="food-item">
+          <img
+            src="img/food-1.png"
+            alt="パスタ"
+            onerror="this.parentElement.style.background = '#d0e4ef'"
+          />
+        </div>
+        <div class="food-item">
+          <img
+            src="img/food-2.png"
+            alt="肉料理"
+            onerror="this.parentElement.style.background = '#d0e4ef'"
+          />
+        </div>
+        <div class="food-item">
+          <img
+            src="img/food-3.png"
+            alt="キッシュ"
+            onerror="this.parentElement.style.background = '#d0e4ef'"
+          />
+        </div>
+        <div class="food-item">
+          <img
+            src="img/food-4.png"
+            alt="オードブル"
+            onerror="this.parentElement.style.background = '#d0e4ef'"
+          />
+        </div>
+        <div class="food-item">
+          <img
+            src="img/food-5.png"
+            alt="生ハム"
+            onerror="this.parentElement.style.background = '#d0e4ef'"
+          />
+        </div>
+        <div class="food-item">
+          <img
+            src="img/food-6.png"
+            alt="キッシュ"
+            onerror="this.parentElement.style.background = '#d0e4ef'"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- MUSIC -->
+    <section class="music" id="music">
+      <div class="section-label">Music</div>
+      <div class="section-title"></div>
+      <div class="music-body">
+        <p>
+          Blue
+          Cornerでは、アナログレコードの音楽をお楽しみいただけます。ジャズ、クラシック、ポップスなど、その夜の雰囲気に合わせた選曲で、ゆったりとした時間をお過ごしください。
+        </p>
+        <div>
+          <span class="music-tag">Jazz</span>
+          <span class="music-tag">Classic</span>
+          <span class="music-tag">Bossa Nova</span>
+          <span class="music-tag">Pop</span>
+          <span class="music-tag">Vinyl Record</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BAR -->
+    <section class="bar-sec" id="bar">
+      <div class="section-label">Bar</div>
+      <div class="section-title"></div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="img/countor.png" alt="バーカウンター" />
+        </div>
+        <div class="gallery-item"><img src="img/wine.png" alt="ワイン" /></div>
+        <div class="gallery-item">
+          <img src="img/record.png" alt="レコード" />
+        </div>
+        <div class="gallery-item">
+          <img src="img/appearance.png" alt="外観" />
+        </div>
+        <div class="gallery-item">
+          <img src="img/counter-2.png" alt="店内カウンター" />
+        </div>
+        <div class="gallery-item">
+          <img src="img/table.png" alt="テーブル" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCESS -->
+    <section class="access" id="access">
+      <div class="section-label">Access</div>
+      <div class="section-title"></div>
+      <div class="access-grid">
+        <div>
+          <div class="info-block">
+            <h3>営業案内</h3>
+            <div class="info-row">
+              <div class="info-label">営業時間</div>
+              <div class="info-value">17:00〜23:00</div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">定休日</div>
+              <div class="info-value">
+                日曜定休
+                <div class="info-note">
+                  臨時休業あり・Facebookをご確認ください
+                </div>
+              </div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">チャージ</div>
+              <div class="info-value">¥500</div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">席数</div>
+              <div class="info-value">
+                カウンター・テーブル 約8名まで
+                <div class="info-note">8名以上はご相談ください</div>
+              </div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">駐車場</div>
+              <div class="info-value">あり</div>
+            </div>
+          </div>
+          <div class="info-block">
+            <h3>連絡先</h3>
+            <div class="info-row">
+              <div class="info-label">住所</div>
+              <div class="info-value">
+                〒920-0022<br />金沢市北安江2丁目22-7
+              </div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">電話</div>
+              <div class="info-value">
+                <a href="tel:0762218490" style="color: inherit"
+                  >(076) 221-8490</a
+                >
+              </div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">SNS</div>
+              <div class="info-value">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100042247496250"
+                  target="_blank"
+                  style="color: var(--blue-light)"
+                  >Facebook: Blue Corner</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3203.5827267572704!2d136.6453459287362!3d36.5882721037709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff83330abe46e49%3A0xb113568beae889cd!2sBlue%20Corner!5e0!3m2!1sja!2sjp!4v1779781145869!5m2!1sja!2sjp"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="section-label">Contact</div>
+      <div class="section-title"></div>
+      <div class="contact-inner">
+        <div>
+          <p class="contact-desc">
+            ご予約・ご質問・大人数でのご利用など、お気軽にお問い合わせください。<br />
+            お電話またはFacebookメッセージからもご連絡いただけます。
+          </p>
+          <div class="contact-info-item">
+            <div class="contact-info-label">電話</div>
+            <div class="contact-info-value">
+              <a href="tel:0762218490" style="color: inherit">(076) 221-8490</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label">営業時間</div>
+            <div class="contact-info-value">17:00〜23:00（日曜定休）</div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-label">Facebook</div>
+            <div class="contact-info-value">
+              <a
+                href="https://www.facebook.com/profile.php?id=100042247496250"
+                target="_blank"
+                style="color: var(--blue)"
+                >Blue Corner</a
+              >
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">お名前</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="山田 太郎"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@email.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">メッセージ</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="ご予約やお問い合わせ内容をご記入ください。"
+              required
+            ></textarea>
+          </div>
+          <p class="form-note">
+            ※ お返事にはお時間をいただく場合がございます。<br />お急ぎの場合はお電話にてご連絡ください。
+          </p>
+          <button type="submit" class="form-submit">送信する</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <img src="img/cat_icon.png" class="footer-cat" alt="猫アイコン" />
+      <div class="footer-logo">Blue Corner</div>
+      <div class="footer-tagline">ワインとおしのぎ。そして、音楽・・・</div>
+      <div class="footer-sub">
+        Café & Bar · 金沢市北安江2丁目22-7<br />月〜土 17:00〜23:00 · 日曜定休
+      </div>
+      <div class="footer-sns">
+        <a
+          href="https://www.facebook.com/profile.php?id=100042247496250"
+          target="_blank"
+          >Facebook</a
+        >
+      </div>
+      <div class="footer-copy">© 2018 Blue Corner All Rights Reserved.</div>
+    </footer>
+
+    <script>
+      // ハンバーガーメニュー
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("open");
+        mobileMenu.classList.toggle("open");
+        document.body.style.overflow = mobileMenu.classList.contains("open")
+          ? "hidden"
+          : "";
+      });
+      document.querySelectorAll(".mobile-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("open");
+          mobileMenu.classList.remove("open");
+          document.body.style.overflow = "";
+        });
+      });
+
+      // お問い合わせフォーム送信（※実際の送信処理は別途設定が必要です）
+      function handleSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector(".form-submit");
+        btn.textContent = "送信しました！";
+        btn.style.opacity = "0.6";
+        btn.disabled = true;
+        setTimeout(() => {
+          e.target.reset();
+          btn.textContent = "送信する";
+          btn.style.opacity = "1";
+          btn.disabled = false;
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
